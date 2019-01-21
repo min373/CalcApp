@@ -6,8 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.content.Intent;
-import android.widget.Toast;
-import android.util.Log;
+import android.support.design.widget.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,21 +23,19 @@ public class MainActivity extends AppCompatActivity {
         plus_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //EditText1の数値の取得
+                EditText1 = (EditText) findViewById(R.id.editText1);
+                //EditText2の数値の取得
+                EditText2 = (EditText) findViewById(R.id.editText2);
                 //空白判定
                 if( EditText1.getText().toString().equals("") || EditText2.getText().toString().equals("") ){
-                    Toast.makeText(MainActivity.this,"please enter number!", Toast.LENGTH_SHORT).show();
-                    Log.d("hello", "hello1");
+                    Snackbar.make(v, "please enter number!", Snackbar.LENGTH_LONG).show();
                 } else {
-                    Log.d("hello", "hello2");
-                    //EditText1の数値の取得
-                    EditText1 = (EditText) findViewById(R.id.editText1);
                     Double double_EditText1 = Double.parseDouble(EditText1.getText().toString());
-                    //EditText2の数値の取得
-                    EditText2 = (EditText) findViewById(R.id.editText2);
                     Double double_EditText2 = Double.parseDouble(EditText2.getText().toString());
                     //加算結果の取得
                     Double PLUS_VALUE = double_EditText1 + double_EditText2;
-
+                    //Intentの宣言
                     Intent plus_intent = new Intent(MainActivity.this, SecondActivity.class);
                     plus_intent.putExtra("PLUS_VALUE", PLUS_VALUE);
                     startActivity(plus_intent);
@@ -51,7 +48,23 @@ public class MainActivity extends AppCompatActivity {
         minus_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //EditText1の数値の取得
+                EditText1 = (EditText) findViewById(R.id.editText1);
+                //EditText2の数値の取得
+                EditText2 = (EditText) findViewById(R.id.editText2);
+                //空白判定
+                if( EditText1.getText().toString().equals("") || EditText2.getText().toString().equals("") ){
+                    Snackbar.make(v, "please enter number!", Snackbar.LENGTH_LONG).show();
+                } else {
+                    Double double_EditText1 = Double.parseDouble(EditText1.getText().toString());
+                    Double double_EditText2 = Double.parseDouble(EditText2.getText().toString());
+                    //加算結果の取得
+                    Double PLUS_VALUE = double_EditText1 - double_EditText2;
+                    //Intentの宣言
+                    Intent plus_intent = new Intent(MainActivity.this, SecondActivity.class);
+                    plus_intent.putExtra("PLUS_VALUE", PLUS_VALUE);
+                    startActivity(plus_intent);
+                }
             }
         });
 
@@ -60,7 +73,23 @@ public class MainActivity extends AppCompatActivity {
         multiplication_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //EditText1の数値の取得
+                EditText1 = (EditText) findViewById(R.id.editText1);
+                //EditText2の数値の取得
+                EditText2 = (EditText) findViewById(R.id.editText2);
+                //空白判定
+                if( EditText1.getText().toString().equals("") || EditText2.getText().toString().equals("") ){
+                    Snackbar.make(v, "please enter number!", Snackbar.LENGTH_LONG).show();
+                } else {
+                    Double double_EditText1 = Double.parseDouble(EditText1.getText().toString());
+                    Double double_EditText2 = Double.parseDouble(EditText2.getText().toString());
+                    //加算結果の取得
+                    Double PLUS_VALUE = double_EditText1 * double_EditText2;
+                    //Intentの宣言
+                    Intent plus_intent = new Intent(MainActivity.this, SecondActivity.class);
+                    plus_intent.putExtra("PLUS_VALUE", PLUS_VALUE);
+                    startActivity(plus_intent);
+                }
             }
         });
 
@@ -69,7 +98,23 @@ public class MainActivity extends AppCompatActivity {
         division_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //EditText1の数値の取得
+                EditText1 = (EditText) findViewById(R.id.editText1);
+                //EditText2の数値の取得
+                EditText2 = (EditText) findViewById(R.id.editText2);
+                //空白判定
+                if( EditText1.getText().toString().equals("") || EditText2.getText().toString().equals("") ){
+                    Snackbar.make(v, "please enter number!", Snackbar.LENGTH_LONG).show();
+                } else {
+                    Double double_EditText1 = Double.parseDouble(EditText1.getText().toString());
+                    Double double_EditText2 = Double.parseDouble(EditText2.getText().toString());
+                    //加算結果の取得
+                    Double PLUS_VALUE = double_EditText1 / double_EditText2;
+                    //Intentの宣言
+                    Intent plus_intent = new Intent(MainActivity.this, SecondActivity.class);
+                    plus_intent.putExtra("PLUS_VALUE", PLUS_VALUE);
+                    startActivity(plus_intent);
+                }
             }
         });
     }
